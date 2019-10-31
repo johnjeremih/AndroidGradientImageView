@@ -20,7 +20,7 @@
         />
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AGASSI"
@@ -33,7 +33,7 @@
         android:alpha="0"/>
 
     <TextView
-        android:id="@+id/desc"
+        android:id="@+id/desc_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FILM BY PARK CHAN WOOK"
