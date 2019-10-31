@@ -1,7 +1,6 @@
 package kr.pe.burt.android.lib.androidgradientimageview
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.LinearGradient
@@ -40,28 +39,27 @@ class AndroidGradientImageView @JvmOverloads constructor(context: Context, attrs
     }
 
     private fun init(context: Context, attrs: AttributeSet?, defStyleAttr: Int) {
-        if (attrs == null)
-            return
 
-        val array = context.obtainStyledAttributes(attrs, R.styleable.AndroidGradientImageViewAttrs)
+        val attributes = context.obtainStyledAttributes(attrs, R.styleable.AndroidGradientImageView,defStyleAttr,0
+        )
 
-        startX = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_x, startX)
-        startY = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_y, startY)
-        widthRatio = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_width, widthRatio)
-        heightRatio = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_height, heightRatio)
-        rotate = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_rotate, rotate)
+        startX = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_x, startX)
+        startY = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_y, startY)
+        widthRatio = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_width, widthRatio)
+        heightRatio = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_height, heightRatio)
+        rotate = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_rotate, rotate)
 
-        startColor = array.getColor(R.styleable.AndroidGradientImageViewAttrs_giv_startColor, startColor)
-        endColor = array.getColor(R.styleable.AndroidGradientImageViewAttrs_giv_endColor, endColor)
-        middleColor = array.getColor(R.styleable.AndroidGradientImageViewAttrs_giv_middleColor, middleColor)
+        startColor = attributes.getColor(R.styleable.AndroidGradientImageView_giv_startColor, startColor)
+        endColor = attributes.getColor(R.styleable.AndroidGradientImageView_giv_endColor, endColor)
+        middleColor = attributes.getColor(R.styleable.AndroidGradientImageView_giv_middleColor, middleColor)
 
-        startOffset = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_startOffset, startOffset)
-        endOffset = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_endOffset, endOffset)
-        middleOffset = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_middleOffset, middleOffset)
+        startOffset = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_startOffset, startOffset)
+        endOffset = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_endOffset, endOffset)
+        middleOffset = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_middleOffset, middleOffset)
 
-        gradientAlpha = array.getFloat(R.styleable.AndroidGradientImageViewAttrs_giv_alpha, gradientAlpha)
+        gradientAlpha = attributes.getFloat(R.styleable.AndroidGradientImageView_giv_alpha, gradientAlpha)
 
-        array.recycle()
+        attributes.recycle()
 
         if (middleColor == -1) {
             colors = intArrayOf(startColor, endColor)

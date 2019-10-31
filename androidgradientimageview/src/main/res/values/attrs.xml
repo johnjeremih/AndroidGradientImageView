@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="AndroidGradientImageViewAttrs">
+    <declare-styleable name="AndroidGradientImageView">
         <attr name="giv_x" format="float" />
         <attr name="giv_y" format="float" />
         <attr name="giv_width" format="float" />
